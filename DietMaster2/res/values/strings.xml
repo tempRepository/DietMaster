@@ -7,5 +7,17 @@
     <string name="foodQuantity">Set daily portions</string>
     <string name="plus">+</string>
     <string name="minus">-</string>
+    <string name="youSelected">You selected</string>
+    <string name="dairy">dairy</string>
+    <string name="fruit">fruit</string>
+    <string name="grain">grain</string>
+    <string name="meat">meat</string>
+    <string name="oil">oil</string>
+    <string name="sweet">sweet</string>
+    <string name="vegetable">vegetable</string>
+    <string name="water">water</string>
+    <string name="OK">OK</string>
+    <string name="next">Go Further</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

@@ -1,290 +1,85 @@
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".QuantitySetter" >
-<ScrollView android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-   <LinearLayout
-        android:id="@+id/linearLayout1"
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/foodQuantity"
+    android:layout_gravity="center"
+    android:textSize="20dp"
+     />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_height="wrap_content" 
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        >
 
-        <TextView
+ 
+      <Button
+            android:id="@+id/minus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/foodQuantity" />
+            android:text="@string/minus" 
+            android:enabled="false"
+            >
+        </Button>
 
-        <LinearLayout
+      <EditText
+          android:id="@+id/quantity"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:editable="false"
+          android:text="0" >
+
+          <requestFocus android:layout_width="wrap_content" />
+
+      </EditText>
+
+        <Button
+            android:id="@+id/plus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+            android:text="@string/plus"
+            android:enabled="false"
+             />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/dairy" />
-
-            <Button
-                android:id="@+id/dairyPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etDairyQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/dairyMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-                        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/fruit" />
-
-            <Button
-                android:id="@+id/fruitPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etFruitQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/fruitMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-                        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/grain" />
-
-            <Button
-                android:id="@+id/grainPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etGrainQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/grainMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-                   <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/meat" />
-
-            <Button
-                android:id="@+id/meatPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etMeatQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/meatMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-                   <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/oil" />
-
-            <Button
-                android:id="@+id/oilPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etOilQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/oilMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-            
-                   <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/sweet" />
-
-            <Button
-                android:id="@+id/sweetPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etSweetQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/sweetMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-       <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/vegetable" />
-
-            <Button
-                android:id="@+id/vegetablePlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etVegetableQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/vegetableMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-        </LinearLayout>
-        <LinearLayout >
-                   <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/water" />
-
-            <Button
-                android:id="@+id/waterPlus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/plus" >
-            </Button>
-
-            <EditText
-                android:id="@+id/etWaterQuantity"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0"
-                android:editable="false"
-                 />
-
-            <Button
-                android:id="@+id/waterMinus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/minus" >
-            </Button>
-            
-        </LinearLayout>
     </LinearLayout>
-</ScrollView>
-</RelativeLayout>
+
+<!--     <LinearLayout -->
+
+        
+        >
+
+      <!--   <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+ -->
+            <GridView
+                android:id="@+id/gridview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:columnWidth="90dp"
+                android:gravity="center"
+                android:horizontalSpacing="10dp"
+                android:numColumns="auto_fit"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="10dp" 
+                android:listSelector="@drawable/selected_food_type"
+                />
+       <!--  </ScrollView> -->
+<!--     </LinearLayout> -->
+
+    
+
+</LinearLayout>
