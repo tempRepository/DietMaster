@@ -15,51 +15,216 @@ public class ImageAdapterPortionsAvailable extends BaseAdapter {
 	private FoodTypeQuantity foodQuantity = new FoodTypeQuantity();
 	// references to our images
 	private Integer[] foodIcons;
+
+	/*
+	 * { R.drawable.dairy, R.drawable.fruit, R.drawable.grain, R.drawable.meat,
+	 * R.drawable.oil, R.drawable.sweet, R.drawable.vegetable, R.drawable.water
+	 * };
+	 */
+	public void noticeLongClickChange(int position) {
+		// foodIcons[position] = R.drawable.pig;
+		switch (foodIcons[position]) {
+		case R.drawable.vegetable:
+			foodIcons[position] = R.drawable.vegetable_half;
+			break;
+		case R.drawable.vegetable_full:
+			foodIcons[position] = R.drawable.vegetable_half;
+			break;
+		case R.drawable.vegetable_half:
+			foodIcons[position] = R.drawable.vegetable_full;
+			break;
+		case R.drawable.sweet:
+			foodIcons[position] = R.drawable.sweet_half;
+			break;
+		case R.drawable.sweet_full:
+			foodIcons[position] = R.drawable.sweet_half;
+			break;
+		case R.drawable.sweet_half:
+			foodIcons[position] = R.drawable.sweet_full;
+			break;
+		case R.drawable.oil:
+			foodIcons[position] = R.drawable.oil_half;
+			break;
+		case R.drawable.oil_full:
+			foodIcons[position] = R.drawable.oil_half;
+			break;
+		case R.drawable.oil_half:
+			foodIcons[position] = R.drawable.oil_full;
+			break;
+		case R.drawable.meat:
+			foodIcons[position] = R.drawable.meat_half;
+			break;
+		case R.drawable.meat_full:
+			foodIcons[position] = R.drawable.meat_half;
+			break;
+		case R.drawable.meat_half:
+			foodIcons[position] = R.drawable.meat_full;
+			break;
+		case R.drawable.grain:
+			foodIcons[position] = R.drawable.grain_half;
+			break;
+		case R.drawable.grain_full:
+			foodIcons[position] = R.drawable.grain_half;
+			break;
+		case R.drawable.grain_half:
+			foodIcons[position] = R.drawable.grain_full;
+			break;
+		case R.drawable.fruit:
+			foodIcons[position] = R.drawable.fruit_half;
+			break;
+		case R.drawable.fruit_full:
+			foodIcons[position] = R.drawable.fruit_half;
+			break;
+		case R.drawable.fruit_half:
+			foodIcons[position] = R.drawable.fruit_full;
+			break;
+		case R.drawable.dairy:
+			foodIcons[position] = R.drawable.dairy_half;
+			break;
+		case R.drawable.dairy_full:
+			foodIcons[position] = R.drawable.dairy_half;
+			break;
+		case R.drawable.dairy_half:
+			foodIcons[position] = R.drawable.dairy_full;
+			break;
+		case R.drawable.water:
+			foodIcons[position] = R.drawable.water_half;
+			break;
+		case R.drawable.water_full:
+			foodIcons[position] = R.drawable.water_half;
+			break;
+		case R.drawable.water_half:
+			foodIcons[position] = R.drawable.dairy_full;
+			break;
 		
-/*		{ R.drawable.dairy, R.drawable.fruit,
-			R.drawable.grain, R.drawable.meat, R.drawable.oil,
-			R.drawable.sweet, R.drawable.vegetable, R.drawable.water };*/
+		default:
+			break;
+		}
+
+		this.notifyDataSetChanged();
+	}
+	
+	public void noticeShortClickChange(int position) {
+		// foodIcons[position] = R.drawable.pig;
+		switch (foodIcons[position]) {
+		case R.drawable.water:
+			foodIcons[position] = R.drawable.water_full;
+			break;
+		case R.drawable.water_full:
+			foodIcons[position] = R.drawable.water;
+			break;
+		case R.drawable.water_half:
+			foodIcons[position] = R.drawable.water;
+			break;
+		case R.drawable.vegetable:
+			foodIcons[position] = R.drawable.vegetable_full;
+			break;
+		case R.drawable.vegetable_full:
+			foodIcons[position] = R.drawable.vegetable;
+			break;
+		case R.drawable.vegetable_half:
+			foodIcons[position] = R.drawable.vegetable;
+			break;
+		case R.drawable.sweet:
+			foodIcons[position] = R.drawable.sweet_full;
+			break;
+		case R.drawable.sweet_full:
+			foodIcons[position] = R.drawable.sweet;
+			break;
+		case R.drawable.sweet_half:
+			foodIcons[position] = R.drawable.sweet;
+			break;
+		case R.drawable.oil:
+			foodIcons[position] = R.drawable.oil_full;
+			break;
+		case R.drawable.oil_full:
+			foodIcons[position] = R.drawable.oil;
+			break;
+		case R.drawable.oil_half:
+			foodIcons[position] = R.drawable.oil;
+			break;
+		case R.drawable.meat:
+			foodIcons[position] = R.drawable.meat_full;
+			break;
+		case R.drawable.meat_full:
+			foodIcons[position] = R.drawable.meat;
+			break;
+		case R.drawable.meat_half:
+			foodIcons[position] = R.drawable.meat;
+			break;
+		case R.drawable.dairy:
+			foodIcons[position] = R.drawable.dairy_full;
+			break;
+		case R.drawable.dairy_full:
+			foodIcons[position] = R.drawable.dairy;
+			break;
+		case R.drawable.dairy_half:
+			foodIcons[position] = R.drawable.dairy;
+			break;
+		case R.drawable.fruit:
+			foodIcons[position] = R.drawable.fruit_full;
+			break;
+		case R.drawable.fruit_full:
+			foodIcons[position] = R.drawable.fruit;
+			break;
+		case R.drawable.fruit_half:
+			foodIcons[position] = R.drawable.fruit;
+			break;
+		case R.drawable.grain:
+			foodIcons[position] = R.drawable.grain_full;
+			break;
+		case R.drawable.grain_full:
+			foodIcons[position] = R.drawable.grain;
+			break;
+		case R.drawable.grain_half:
+			foodIcons[position] = R.drawable.grain;
+			break;
+			
+		default:
+			break;
+		}
+
+		this.notifyDataSetChanged();
+	}
 
 	public ImageAdapterPortionsAvailable(Context c) {
 		mContext = c;
 		// creating array with appropriate quantity of specific food type
 		// portions
-		foodIcons=new Integer[Math.round(foodQuantity.getAllTypesQuantity())];
-		int iterator=0;
+		foodIcons = new Integer[Math.round(foodQuantity.getAllTypesQuantity())];
+		int iterator = 0;
 		for (int i = 0; i < foodQuantity.getDairyQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.dairy;
+			foodIcons[iterator] = R.drawable.dairy;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getFruitQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.fruit;
+			foodIcons[iterator] = R.drawable.fruit;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getGrainQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.grain;
+			foodIcons[iterator] = R.drawable.grain;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getMeatQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.meat;
+			foodIcons[iterator] = R.drawable.meat;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getOilQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.oil;
+			foodIcons[iterator] = R.drawable.oil;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getSweetQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.sweet;
+			foodIcons[iterator] = R.drawable.sweet;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getVegetableQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.vegetable;
+			foodIcons[iterator] = R.drawable.vegetable;
 			iterator++;
 		}
 		for (int i = 0; i < foodQuantity.getWaterQuantity(); i++) {
-			foodIcons[iterator]=R.drawable.water;
+			foodIcons[iterator] = R.drawable.water;
 			iterator++;
 		}
-		
-		
 
 	}
 
