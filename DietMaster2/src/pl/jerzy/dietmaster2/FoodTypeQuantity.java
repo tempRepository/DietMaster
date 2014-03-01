@@ -12,14 +12,19 @@ float waterQuantity;
 
 public FoodTypeQuantity()
 {
-	float dairyQuantity=0;
-	float fruitQuantity=0;
-	float grainQuantity=0;
-	float meatQuantity=0;
-	float oilQuantity=0;
-	float sweetQuantity=0;
-	float vegetableQuantity=0;
-	float waterQuantity=0;
+	dairyQuantity=2;
+	fruitQuantity=3;
+	grainQuantity=1;
+	meatQuantity=2;
+	oilQuantity=3;
+	sweetQuantity=2;
+	vegetableQuantity=1;
+	waterQuantity=1;
+}
+
+public float getAllTypesQuantity()
+{
+	return dairyQuantity+fruitQuantity+grainQuantity+meatQuantity+oilQuantity+sweetQuantity+vegetableQuantity+waterQuantity;
 }
 
 public float getDairyQuantity() {

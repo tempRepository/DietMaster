@@ -3,6 +3,7 @@ package pl.jerzy.dietmaster2;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -116,13 +117,12 @@ public class QuantitySetter extends Activity {
 					int position, long id) {
 				((Button) findViewById(R.id.plus)).setEnabled(true);
 				((Button) findViewById(R.id.minus)).setEnabled(true);
-				/*
-				 * Toast.makeText(QuantitySetter.this, "" + position,
-				 * Toast.LENGTH_SHORT).show();
-				 */
+
 				selectedItemPosition = position;
 				switch (position) {
 				case 0:
+					Log.d("myDebug", String.valueOf(foodQuantity
+							.getDairyQuantity()));
 					quantity.setText(String.valueOf(foodQuantity
 							.getDairyQuantity()));
 					Toast.makeText(
